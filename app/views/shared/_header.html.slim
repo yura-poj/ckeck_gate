@@ -1,0 +1,8 @@
+- if current_user
+  p
+    = "Hi, #{current_user.name}! #{current_user.email} "
+    img src="#{current_user.image_url}" width=50 height=50
+    = ' '
+    = link_to('log out', destroy_user_session_path, method: :delete)
+- else
+  = link_to('Log in', new_user_session_path)
