@@ -114,12 +114,13 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
     digest (3.1.0)
-    dotenv (2.7.6)
-    dotenv-rails (2.7.6)
-      dotenv (= 2.7.6)
-      railties (>= 3.2)
     erubi (1.11.0)
     execjs (2.8.1)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     faraday (2.5.2)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -355,7 +356,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise
-  dotenv-rails
+  factory_bot_rails
   html2slim
   importmap-rails (~> 1.1)
   jbuilder
