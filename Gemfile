@@ -54,6 +54,7 @@ gem 'jquery-rails'
 gem 'slim-rails'
 
 gem 'omniauth'
+gem 'omniauth-github', github: 'omniauth/omniauth-github'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 
@@ -71,6 +72,7 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'rubocop', require: false
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
