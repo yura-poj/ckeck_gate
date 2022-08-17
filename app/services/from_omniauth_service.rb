@@ -14,6 +14,16 @@ class FromOmniauthService
       return authorization.user
     end
 
+    authorization = create_authorization
+    user = authorization.user
+    update_info(user)
+
+    user
+  end
+
+  private
+
+  def create_authorization
     email = auth.info[:email]
     user = User.where(email: email).first
     unless user
@@ -21,12 +31,7 @@ class FromOmniauthService
       user = User.create!(email: email, password: password, password_confirmation: password)
     end
     user.authorizations.create(provider: auth.provider, uid: auth.uid)
-    update_info(user)
-
-    user
   end
-
-  private
 
   def update_info(user)
     user.name = auth.info[:name]
