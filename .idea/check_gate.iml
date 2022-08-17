@@ -58,10 +58,12 @@
     <orderEntry type="library" scope="PROVIDED" name="devise (v4.8.1, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.5.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="digest (v3.1.0, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="dotenv (v2.7.6, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="dotenv-rails (v2.7.6, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.11.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.8.1, rbenv: 3.0.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="faraday (v2.3.0, rbenv: 3.0.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="faraday-net_http (v2.0.3, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="faraday (v2.5.2, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="faraday-net_http (v3.0.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.15.5, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v1.0.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hashie (v5.0.0, rbenv: 3.0.1) [gem]" level="application" />
@@ -74,6 +76,7 @@
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.5, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.5.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jsbundling-rails (v1.0.3, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v2.6.2, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jwt (v2.4.1, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.18.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.7.1, rbenv: 3.0.1) [gem]" level="application" />
@@ -90,22 +93,22 @@
     <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.3.1, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.5.8, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.13.8, rbenv: 3.0.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="oauth2 (v1.4.9, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="oauth2 (v1.4.10, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth (v2.1.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth-github (v2.0.0@1633cb, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth-google-oauth2 (v1.0.1, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth-oauth2 (v1.7.3, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth-rails_csrf_protection (v1.0.1, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, rbenv: 3.0.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="parallel (v1.21.0, rbenv: 3.0.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="parser (v3.1.1.0, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="parallel (v1.22.1, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="parser (v3.1.2.1, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v1.4.3, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="popper_js (v2.11.5, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v4.0.7, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v5.6.4, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.6.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.2.4, rbenv: 3.0.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-protection (v2.2.0, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-protection (v2.2.2, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.0.2, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v7.0.3.1, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.0.3, rbenv: 3.0.1) [gem]" level="application" />
@@ -124,8 +127,8 @@
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v3.11.1, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-rails (v5.1.2, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.11.0, rbenv: 3.0.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.26.1, rbenv: 3.0.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.16.0, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.35.0, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.21.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.11.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby2_keywords (v0.0.5, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, rbenv: 3.0.1) [gem]" level="application" />
@@ -133,18 +136,18 @@
     <orderEntry type="library" scope="PROVIDED" name="sassc-rails (v2.1.2, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.4.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="slim (v4.1.0, rbenv: 3.0.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="slim-rails (v3.3.0, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="slim-rails (v3.5.1, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.1.1, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.4.2, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.1.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="strscan (v3.0.4, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="temple (v0.8.2, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.2.1, rbenv: 3.0.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.10, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.11, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="timeout (v0.3.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v1.1.1, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.5, rbenv: 3.0.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v2.1.0, rbenv: 3.0.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v2.2.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.0, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webdrivers (v5.0.0, rbenv: 3.0.1) [gem]" level="application" />
