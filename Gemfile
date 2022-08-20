@@ -93,3 +93,5 @@ group :test do
 end
 
 gem 'importmap-rails', '~> 1.1'
+
+gem 'pundit', '~> 2.2'

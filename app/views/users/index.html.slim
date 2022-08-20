@@ -1,0 +1,7 @@
+h1 Users
+- users.find_each do |user|
+  p
+    = user.name
+    = user.email
+    img src="#{user.image_url}" width=50 height=50
+
