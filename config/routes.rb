@@ -8,7 +8,7 @@ Rails.application.routes.draw do
                 sessions: 'users/sessions',
                 omniauth_callbacks: 'users/omniauth_callbacks'
               }
-  # resources :users
+  resources :users, only: %i[show index]
   root to: 'users#show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
