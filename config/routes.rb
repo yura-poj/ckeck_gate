@@ -9,7 +9,8 @@ Rails.application.routes.draw do
                 omniauth_callbacks: 'users/omniauth_callbacks'
               }
   resources :users, only: %i[show index]
-  root to: 'users#show'
+  resources :gates, only: %i[index]
+  root to: 'gates#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
