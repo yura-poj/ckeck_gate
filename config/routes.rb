@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  use_doorkeeper
   devise_for :users,
              path_names: {sign_in: :login, sign_out: :logout},
              controllers: {
