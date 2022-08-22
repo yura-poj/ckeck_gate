@@ -12,6 +12,13 @@ Rails.application.routes.draw do
   resources :users, only: %i[show index]
   resources :gates, only: %i[index]
   root to: 'gates#index'
+
+  namespace :api do
+    namespace :v1 do
+      resources :exits, only: %i[create]
+      resources :enters, only: %i[create]
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
