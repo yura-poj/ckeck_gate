@@ -2,8 +2,8 @@ class GatesController < ApplicationController
   helper_method :gates
 
   def index
+    authorize Gate
     @gates = policy_scope(Gate)
-    authorize @gates
   end
 
   private
