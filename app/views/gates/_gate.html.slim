@@ -1,0 +1,4 @@
+tr class='bg-light'
+  td = link_to gate.user.name, user_path(gate.user)
+  td = gate.enter? ? 'Get in' : 'Get out'
+  td = gate.created_at

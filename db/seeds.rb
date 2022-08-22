@@ -6,3 +6,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+users = FactoryBot.create_list(:user, 2)
+FactoryBot.create(:gate, user: users.first)
+FactoryBot.create(:gate, user: users.first, enter: false)
+
