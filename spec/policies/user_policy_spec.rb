@@ -6,13 +6,12 @@ RSpec.describe UserPolicy, type: :policy do
   subject { described_class }
 
   permissions :show? do
-    it "grants access if user watch self" do
+    it 'grants access if user watch self' do
       expect(subject).to permit(user, user)
     end
 
-    it "grants access if user watch other" do
+    it 'grants access if user watch other' do
       expect(subject).to_not permit(user, User.new)
     end
   end
-
 end

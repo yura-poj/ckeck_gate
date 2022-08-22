@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GatesController < ApplicationController
   helper_method :gates
 
@@ -11,5 +13,4 @@ class GatesController < ApplicationController
   def gates
     @gates = Gate.all
   end
-
 end

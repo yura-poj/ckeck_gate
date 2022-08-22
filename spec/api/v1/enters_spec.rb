@@ -7,7 +7,7 @@ describe 'Enters API', type: :request do
     { 'CONTENT_TYPE' => 'application/json',
       'ACCEPT' => 'application/json' }
   end
-  
+
   describe 'POST /api/v1/enters' do
     let(:api_path) { '/api/v1/enters' }
 
