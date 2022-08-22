@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class GatesController < ApplicationController
   helper_method :gates
 
   def index
+    authorize Gate
     @gates = policy_scope(Gate)
-    authorize @gates
   end
 
   private
@@ -11,5 +13,4 @@ class GatesController < ApplicationController
   def gates
     @gates = Gate.all
   end
-
 end
