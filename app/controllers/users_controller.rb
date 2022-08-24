@@ -17,11 +17,10 @@ class UsersController < ApplicationController
     authorize user
     if user.update(verify: true)
       flash[:success] = 'User successfully verify'
-      redirect_back fallback_location: root_path
     else
       flash[:alert] = "User doesn't verify"
-      redirect_back fallback_location: root_path
     end
+    redirect_back fallback_location: root_path
   end
 
   def unverify

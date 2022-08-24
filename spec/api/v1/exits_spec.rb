@@ -31,11 +31,10 @@ describe 'Exits API', type: :request do
                  params: { access_token: access_token.token, headers: headers }
           end.to change(Gate, :count).by(0)
         end
-
       end
 
       context 'Verified user' do
-        let(:user) { create(:user, verify: true)}
+        let(:user) { create(:user, verify: true) }
         let(:access_token) { create(:access_token, resource_owner_id: user.id) }
         it 'returns 201 status' do
           post api_path,

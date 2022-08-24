@@ -14,8 +14,6 @@ class Gate < ApplicationRecord
   private
 
   def user_cannot_be_unverified
-    unless User.find(user_id).verify
-      errors.add(:user_verification, "user must be verified")
-    end
+    errors.add(:user_verification, 'user must be verified') unless User.find(user_id).verify
   end
 end
