@@ -13,6 +13,27 @@ class UsersController < ApplicationController
     authorize users
   end
 
+  def verify
+    authorize user
+    if user.update(verify: true)
+      flash[:success] = 'User successfully verify'
+    else
+      flash[:alert] = "User doesn't verify"
+    end
+    redirect_back fallback_location: root_path
+  end
+
+  def unverify
+    authorize user
+    if user.update(verify: false)
+      flash[:success] = 'User successfully unverify'
+      redirect_back fallback_location: root_path, success: 'User successfully unverify'
+    else
+      flash[:alert] = "User doesn't unverify"
+      redirect_back fallback_location: root_path, alert: "User doesn't unverify"
+    end
+  end
+
   private
 
   def users

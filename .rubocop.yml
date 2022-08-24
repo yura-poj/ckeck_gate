@@ -15,6 +15,10 @@ Style/FrozenStringLiteralComment:
   Exclude:
     - 'spec/**/*'
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
 
 #Default rubocop config
 Gemspec/DeprecatedAttributeAssignment:

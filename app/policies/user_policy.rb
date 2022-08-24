@@ -14,10 +14,18 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show?
-    @user.admin? || user == record
+    user.admin? || user == record
   end
 
   def index?
-    @user.admin?
+    user.admin?
+  end
+
+  def verify?
+    user.admin? && user != record
+  end
+
+  def unverify?
+    user.admin? && user != record
   end
 end

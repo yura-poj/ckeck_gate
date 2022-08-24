@@ -9,7 +9,13 @@ Rails.application.routes.draw do
                 sessions: 'users/sessions',
                 omniauth_callbacks: 'users/omniauth_callbacks'
               }
-  resources :users, only: %i[show index]
+  resources :users, only: %i[show index] do
+    member do
+      patch 'verify'
+      patch 'unverify'
+    end
+
+  end
   resources :gates, only: %i[index]
   root to: 'gates#index'
 
