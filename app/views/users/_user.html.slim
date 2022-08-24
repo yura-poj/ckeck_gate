@@ -1,0 +1,14 @@
+tr class='bg-light'
+  th.align-middle = user.id
+  td.align-middle = user.name
+  td.align-middle
+    img src="#{user.image_url}" width=40 height=40
+  td.align-middle = user.created_at
+  td.align-middle = user.verify
+  td.align-middle
+    = link_to 'Show', user_path(user), class: 'btn btn-outline-dark me-2'
+  td.align-middle
+    - if user.verify
+      = button_to 'Unverify', unverify_user_path(user), method: :patch, class: 'btn btn-outline-dark me-2'
+    -else
+      = button_to 'Verify', verify_user_path(user), method: :patch, class: 'btn btn-outline-dark me-2'
