@@ -2,10 +2,13 @@ h1 Users
 table class="table border-primary text-lg-center mt-4"
   tr class='text-info'
     th Id
+    th Type
     th Name
     th Image
     th Created at
     th Verification
     th class='text-info text-center' colspan="2" Actions
-  = render users
+  - users.find_each do |user|
+      = render 'user', user: user
+
 

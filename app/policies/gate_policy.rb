@@ -4,7 +4,7 @@ class GatePolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      return scope.all if user.admin?
+      return scope.all if user.is_a?(Admin)
 
       scope.where(user: user)
     end

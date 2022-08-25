@@ -10,9 +10,5 @@ class User < ApplicationRecord
   has_many :authorizations, dependent: :destroy
   has_many :gates, dependent: :destroy
 
-  validates :email, presence: true
-
-  def admin?
-    admin
-  end
+  validates :email, :type, :name, presence: true
 end

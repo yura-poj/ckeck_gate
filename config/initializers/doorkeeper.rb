@@ -20,7 +20,7 @@ Doorkeeper.configure do
     # Example implementation:
 
     if current_user
-      head :forbidden unless current_user.admin?
+      head :forbidden unless current_user.is_a?(Admin)
     else
       redirect_to new_user_session_path
     end
@@ -384,7 +384,7 @@ Doorkeeper.configure do
   # Be default all Resource Owners are authorized to any Client (application).
   #
   # authorize_resource_owner_for_client do |client, resource_owner|
-  #   resource_owner.admin? || client.owners_allowlist.include?(resource_owner)
+  #   resource_owner.is_a?(Admin) || client.owners_allowlist.include?(resource_owner)
   # end
 
   # Hook into the strategies' request & response life-cycle in case your
@@ -425,7 +425,7 @@ Doorkeeper.configure do
   # For example if dealing with a trusted application.
   #
   # skip_authorization do |resource_owner, client|
-  #   client.superapp? or resource_owner.admin?
+  #   client.superapp? or resource_owner.is_a?(Admin)
   # end
 
   # Configure custom constraints for the Token Introspection request.
