@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
   private
 
   def user_not_authorized
-    # flash[:alert] = 'You are not authorized to perform this action.'
-    redirect_back(fallback_location: root_path, alert: 'You are not authorized to perform this action.')
+    if current_user
+      redirect_back(fallback_location: root_path, alert: 'You are not authorized to perform this action.')
+    else
+      redirect_to new_user_session_path, alert: 'You need to log in'
+    end
+
   end
 end

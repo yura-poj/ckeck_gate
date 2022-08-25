@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  TYPES = %w[Child Parent].freeze
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and
   devise :database_authenticatable, :registerable,

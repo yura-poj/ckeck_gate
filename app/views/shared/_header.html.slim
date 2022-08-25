@@ -3,15 +3,16 @@ header.p-3.text-bg-dark
     .row.me-lg-auto
       h2.col-lg-auto = link_to 'Check Gate', root_path, class: 'nav-link text-secondary'
       p.col-lg-auto = link_to 'Home', root_path, class: 'nav-link text-white'
-      p.col-lg-auto = link_to 'Me', user_path(current_user), class: 'nav-link text-white'
-      - if policy(User).index?
-        p.col-lg-auto = link_to 'Users', users_path, class: 'nav-link text-white'
-      .col-sm-4
       - if current_user
+        p.col-lg-auto = link_to 'Me', user_path(current_user), class: 'nav-link text-white'
+        - if policy(User).index?
+          p.col-lg-auto = link_to 'Users', users_path, class: 'nav-link text-white'
+        .col-sm-4
         p.col-lg-auto.fst-italic = "Hi, #{current_user.name}!"
         img.col-lg-auto src="#{current_user.image_url}" width=40 height=40
         .col-lg-auto = button_to 'Logout', destroy_user_session_path, method: :delete,
                 class: 'btn btn-outline-light me-2[type="button"]'
       - else
+        .col-sm-6
         .col-lg-auto = link_to 'Log in', new_user_session_path, class: 'btn btn-outline-light me-2[type="button"]'
         .col-lg-auto = link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-light me-2[type="button"]'
