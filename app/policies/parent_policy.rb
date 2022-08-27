@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ParentPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
@@ -9,5 +11,4 @@ class ParentPolicy < ApplicationPolicy
   def show?
     user.is_a?(Admin) || user == record
   end
-
 end

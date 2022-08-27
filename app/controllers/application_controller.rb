@@ -13,6 +13,5 @@ class ApplicationController < ActionController::Base
     else
       redirect_to new_user_session_path, alert: 'You need to log in'
     end
-
   end
 end

@@ -23,14 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_044641) do
     t.index ["user_id"], name: "index_authorizations_on_user_id"
   end
 
-  create_table "children_parents", force: :cascade do |t|
-    t.bigint "child_id", null: false
-    t.bigint "parent_id", null: false
-    t.boolean "confirm"
-    t.index ["child_id"], name: "index_children_parents_on_child_id"
-    t.index ["parent_id"], name: "index_children_parents_on_parent_id"
-  end
-
   create_table "gates", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.boolean "enter", null: false
@@ -82,6 +74,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_044641) do
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
   end
 
+  create_table "relations", force: :cascade do |t|
+    t.bigint "kid_id", null: false
+    t.bigint "parent_id", null: false
+    t.boolean "confirm", default: false, null: false
+    t.boolean "read", default: false, null: false
+    t.index ["confirm"], name: "index_relations_on_confirm"
+    t.index ["kid_id"], name: "index_relations_on_kid_id"
+    t.index ["parent_id"], name: "index_relations_on_parent_id"
+    t.index ["read"], name: "index_relations_on_read"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
@@ -106,8 +109,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_044641) do
   end
 
   add_foreign_key "authorizations", "users"
-  add_foreign_key "children_parents", "users", column: "child_id"
-  add_foreign_key "children_parents", "users", column: "parent_id"
   add_foreign_key "gates", "users"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"

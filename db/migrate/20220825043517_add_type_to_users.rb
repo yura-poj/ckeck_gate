@@ -4,6 +4,6 @@ class AddTypeToUsers < ActiveRecord::Migration[7.0]
     remove_column :users, :admin
 
     add_index :users, :type
-    User.update_all(type: 'Child')
+    User.update_all(type: 'Kid')
   end
 end
