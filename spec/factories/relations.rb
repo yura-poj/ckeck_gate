@@ -4,5 +4,6 @@ FactoryBot.define do
   factory :relation do
     kid
     parent
+    sender { parent }
   end
 end
