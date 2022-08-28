@@ -1,0 +1,11 @@
+tr class='bg-light'
+  - if current_user.is_a?(Admin)
+    td = link_to relation.parent.name, user_path(relation.parent)
+  - if current_user.is_a?(Kid)
+    td = link_to relation.parent.name, user_path(relation.parent)
+  - else
+    td = link_to relation.kid.name, user_path(relation.parent)
+  td = relation.created_at
+  - unless current_user.is_a?(Admin)
+    / td = link_to 'Accept', , class: 'btn btn-outline-dark me-2'
+    / td = link_to 'Decline', , class: 'btn btn-outline-dark me-2'

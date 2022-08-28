@@ -79,7 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_044641) do
     t.bigint "parent_id", null: false
     t.boolean "confirm", default: false, null: false
     t.boolean "read", default: false, null: false
-    t.index ["confirm"], name: "index_relations_on_confirm"
+    t.string "sender", null: false
     t.index ["kid_id"], name: "index_relations_on_kid_id"
     t.index ["parent_id"], name: "index_relations_on_parent_id"
     t.index ["read"], name: "index_relations_on_read"
