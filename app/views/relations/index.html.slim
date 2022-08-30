@@ -1,9 +1,10 @@
 h1 Relations
 table class="table border-primary text-lg-center mt-4"
   tr class='text-info'
-    - if current_user.is_a?(Admin)
-      th Addressee
+    th Addressee
     th Sender
     th Sending time
+    th Accept?
     th class='text-info text-center' colspan="2" Actions
-  = render @relations
+  - if @relations
+    = render @relations

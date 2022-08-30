@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   has_many :authorizations, dependent: :destroy
   has_many :gates, dependent: :destroy
+  has_many :users, through: :relations, dependent: :destroy
 
   validates :email, :type, :name, presence: true
 end

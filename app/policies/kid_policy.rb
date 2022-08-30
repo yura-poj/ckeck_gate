@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ChildPolicy < ApplicationPolicy
+class KidPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     # def resolve
@@ -9,6 +9,6 @@ class ChildPolicy < ApplicationPolicy
   end
 
   def show?
-    user.is_a?(Admin) || user == record
+    true
   end
 end

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   end
   resources :gates, only: %i[index]
-  resources :relations, only: %i[index] do
+  resources :relations, only: %i[index create destroy] do
     member do
       patch 'accept'
       patch 'decline'

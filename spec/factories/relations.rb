@@ -2,8 +2,7 @@
 
 FactoryBot.define do
   factory :relation do
-    kid
-    parent
-    sender { parent }
+    addressee { parent }
+    sender { kid }
   end
 end

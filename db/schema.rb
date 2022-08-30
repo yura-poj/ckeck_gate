@@ -75,14 +75,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_044641) do
   end
 
   create_table "relations", force: :cascade do |t|
-    t.bigint "kid_id", null: false
-    t.bigint "parent_id", null: false
+    t.bigint "sender_id"
+    t.bigint "addressee_id"
     t.boolean "confirm", default: false, null: false
     t.boolean "read", default: false, null: false
-    t.string "sender", null: false
-    t.index ["kid_id"], name: "index_relations_on_kid_id"
-    t.index ["parent_id"], name: "index_relations_on_parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["addressee_id"], name: "index_relations_on_addressee_id"
     t.index ["read"], name: "index_relations_on_read"
+    t.index ["sender_id"], name: "index_relations_on_sender_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -112,4 +113,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_044641) do
   add_foreign_key "gates", "users"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
+  add_foreign_key "relations", "users", column: "addressee_id"
+  add_foreign_key "relations", "users", column: "sender_id"
 end

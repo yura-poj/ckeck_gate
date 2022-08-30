@@ -9,6 +9,6 @@ class ParentPolicy < ApplicationPolicy
   end
 
   def show?
-    user.is_a?(Admin) || user == record
+    true
   end
 end

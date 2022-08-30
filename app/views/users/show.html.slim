@@ -1,2 +1,14 @@
-p class='text-success' aaa
+img src="#{current_user.image_url}" width=100 height=100
+p = user.email
 p = user.name
+p = button_to 'Send relation request', relations_path(addressee_id: user.id)
+h2 Relations
+table class="table border-primary text-lg-center mt-4"
+  tr class='text-info'
+    th Addressee
+    th Sender
+    th Sending time
+    th Accept?
+    th class='text-info text-center' colspan="2" Actions
+  - if @relations
+    = render @relations
