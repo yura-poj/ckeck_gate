@@ -76,6 +76,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'rubocop', require: false
   gem 'web-console'

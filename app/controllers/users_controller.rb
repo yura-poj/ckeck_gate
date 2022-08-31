@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     authorize user
+    @relations = Relation.where(addressee: user, read: false)
   end
 
   def index

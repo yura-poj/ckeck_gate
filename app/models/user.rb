@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  TYPES = %w[Kid Parent].freeze
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and
   devise :database_authenticatable, :registerable,
@@ -9,10 +10,7 @@ class User < ApplicationRecord
 
   has_many :authorizations, dependent: :destroy
   has_many :gates, dependent: :destroy
+  has_many :users, through: :relations, dependent: :destroy
 
-  validates :email, presence: true
-
-  def admin?
-    admin
-  end
+  validates :email, :type, :name, presence: true
 end

@@ -3,7 +3,7 @@
 class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      return scope.all if user.admin?
+      return scope.all if user.is_a?(Admin)
 
       scope.none
     end
@@ -14,18 +14,18 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show?
-    user.admin? || user == record
+    user.is_a?(Admin) || user == record
   end
 
   def index?
-    user.admin?
+    user.is_a?(Admin)
   end
 
   def verify?
-    user.admin? && user != record
+    user.is_a?(Admin) && user != record
   end
 
   def unverify?
-    user.admin? && user != record
+    user.is_a?(Admin) && user != record
   end
 end

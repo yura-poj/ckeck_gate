@@ -1,0 +1,17 @@
+tr class='bg-light'
+  - if current_user == relation.addressee
+    td You
+  - else
+    td = link_to relation.addressee.name, user_path(relation.addressee)
+  - if current_user == relation.sender
+    td You
+  - else
+    td = link_to relation.sender.name, user_path(relation.sender)
+  td = relation.created_at
+  td = relation.confirm
+  - if current_user == relation.addressee
+    td.col-lg-auto = button_to 'Accept', accept_relation_path(relation), class: 'btn btn-outline-success me-2', method: :patch
+    td.col-lg-auto = button_to 'Decline', decline_relation_path(relation), class: 'btn btn-outline-danger me-2', method: :patch
+  - elsif current_user == relation.sender
+    td.col-lg-auto = button_to 'Destroy relation request', relation_path(relation),
+            class: 'btn btn-outline-danger me-2', method: :delete

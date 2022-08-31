@@ -7,9 +7,9 @@ FactoryBot.define do
 
   factory :user do
     email
+    name { 'Vasya' }
     password { '12345678' }
     password_confirmation { '12345678' }
     confirmed_at { 1.minute.ago }
-    admin { false }
   end
 end

@@ -10,6 +10,10 @@ Bundler.require(*Rails.groups)
 
 module CheckGate
   class Application < Rails::Application
+    config.generators do |g|
+      g.test_framework  nil #to skip test framework
+      g.helper false
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 

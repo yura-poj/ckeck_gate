@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :gate do
-    user
+    user { kid }
     enter { true }
   end
 end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root to: 'gates#index'
   use_doorkeeper
   devise_for :users,
              path_names: {sign_in: :login, sign_out: :logout},
@@ -17,7 +18,13 @@ Rails.application.routes.draw do
 
   end
   resources :gates, only: %i[index]
-  root to: 'gates#index'
+  resources :relations, only: %i[index create destroy] do
+    member do
+      patch 'accept'
+      patch 'decline'
+    end
+  end
+
 
   namespace :api do
     namespace :v1 do
