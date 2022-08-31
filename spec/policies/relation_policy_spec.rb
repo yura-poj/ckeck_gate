@@ -7,7 +7,7 @@ RSpec.describe RelationPolicy, type: :policy do
   let(:parent) { create(:parent) }
   let(:other_parent) { create(:parent) }
 
-  let(:relation) { create(:relation, addressee: parent ,sender: kid) }
+  let(:relation) { create(:relation, addressee: parent, sender: kid) }
 
   subject { described_class }
 
@@ -34,7 +34,6 @@ RSpec.describe RelationPolicy, type: :policy do
   end
 
   permissions :accept? do
-
     it 'grants access if sender accept' do
       expect(subject).to_not permit(kid, relation)
     end
@@ -49,7 +48,6 @@ RSpec.describe RelationPolicy, type: :policy do
   end
 
   permissions :decline? do
-
     it 'grants access if sender decline' do
       expect(subject).to_not permit(kid, relation)
     end

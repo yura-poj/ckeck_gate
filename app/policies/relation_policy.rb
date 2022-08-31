@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RelationPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
@@ -13,9 +15,9 @@ class RelationPolicy < ApplicationPolicy
   end
 
   def create?
-    #record is a addressee
+    # record is a addressee
     return false if user.is_a?(Admin) || record.is_a?(Admin)
-    return false if user.class == record.class
+    return false if user.instance_of?(record.class)
 
     true
   end
