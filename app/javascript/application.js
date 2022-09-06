@@ -8,5 +8,8 @@ import "./controllers"
 import * as bootstrap from "bootstrap"
 window.bootstrap = bootstrap
 
+import * as ActiveStorage from "activestorage"
+ActiveStorage.start()
+
 import "channels"
 
