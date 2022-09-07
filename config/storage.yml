@@ -12,7 +12,7 @@ yandex:
   secret_access_key: <%= Rails.application.credentials[Rails.env.to_sym][:yandex_disk][:secret] %>
   region: ru-central1
   endpoint: https://storage.yandexcloud.net
-  bucket: check_gate-<%= Rails.env %>
+  bucket: check-gate-<%= Rails.env %>
   force_path_style: true
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)

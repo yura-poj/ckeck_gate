@@ -1,4 +1,7 @@
 :schedule:
   export_log:
-    cron: '0 * * * * *'   # Runs once per minute
+    every: 2 hours   # Runs once per minute
     class: ExportLogJob
+  clear_log:
+    cron: '0 0 * * 0' #“At 00:00 on Sunday.”
+    class: ClearLogJob

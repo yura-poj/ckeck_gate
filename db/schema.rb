@@ -60,6 +60,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_105643) do
     t.index ["user_id"], name: "index_gates_on_user_id"
   end
 
+  create_table "logs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "oauth_access_grants", force: :cascade do |t|
     t.bigint "resource_owner_id", null: false
     t.bigint "application_id", null: false
