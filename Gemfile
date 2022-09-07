@@ -64,8 +64,8 @@ gem 'sassc-rails'
 gem 'doorkeeper'
 
 gem 'sidekiq'
-gem 'sinatra', require: false
 gem 'sidekiq-scheduler'
+gem 'sinatra', require: false
 
 gem 'aws-sdk-s3', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

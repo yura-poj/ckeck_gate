@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 class ExportLogService
   def export
     source_path = Rails.root.join('log', "#{Rails.env}.log")
     shared_path = Rails.root.join('log', "#{Rails.env}_shared.log")
-    File.write(shared_path, File.read(source_path) )
+    File.write(shared_path, File.read(source_path))
     File.write(source_path, '')
     Log.create.file.attach(io: File.open(shared_path),
-                           filename: "Log-#{DateTime.now.to_s}.log")
+                           filename: "Log-#{DateTime.now}.log")
     File.delete(shared_path)
   end
 

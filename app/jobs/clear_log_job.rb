@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ClearLogJob < ApplicationJob
   queue_as :default
 
@@ -5,4 +7,3 @@ class ClearLogJob < ApplicationJob
     ExportLogService.new.clear
   end
 end
-
