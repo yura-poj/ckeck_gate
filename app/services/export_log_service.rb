@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
+require 'zip'
+
 class ExportLogService
   def export
     source_path = Rails.root.join('log', "#{Rails.env}.log")
-    shared_path = Rails.root.join('log', "#{Rails.env}_shared.log")
-    File.write(shared_path, File.read(source_path))
+    shared_path = Rails.root.join('log', "#{Rails.env}_shared.zip")
+    Zip::File.open(shared_path, create: true) { |zipfile| zipfile.add('file', File.open(source_path)) }
     File.write(source_path, '')
     Log.create.file.attach(io: File.open(shared_path),
-                           filename: "Log-#{DateTime.now}.log")
+                           filename: "Log-#{DateTime.now}.zip")
     File.delete(shared_path)
   end
 
