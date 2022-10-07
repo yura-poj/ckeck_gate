@@ -1,7 +1,13 @@
 # frozen_string_literal: true
+require 'sidekiq/web'
 
 Rails.application.routes.draw do
   root to: 'gates#index'
+
+  authenticate :user, lambda { |u| u.is_a?(Admin) } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   use_doorkeeper
   devise_for :users,
              path_names: {sign_in: :login, sign_out: :logout},

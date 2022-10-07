@@ -63,6 +63,13 @@ gem 'sassc-rails'
 
 gem 'doorkeeper'
 
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
+gem 'sinatra', require: false
+
+gem 'aws-sdk-s3', require: false
+
+gem 'rubyzip'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
