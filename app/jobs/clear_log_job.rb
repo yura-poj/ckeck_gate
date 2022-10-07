@@ -4,6 +4,6 @@ class ClearLogJob < ApplicationJob
   queue_as :default
 
   def perform
-    ExportLogService.new.clear
+    ClearLogJob.new.clear
   end
 end
