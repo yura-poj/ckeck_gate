@@ -4,6 +4,6 @@ class ClearLogJob < ApplicationJob
   queue_as :default
 
   def perform
-    ClearLogJob.new.clear
+    ClearLogService.new.clear
   end
 end

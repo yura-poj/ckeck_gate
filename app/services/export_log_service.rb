@@ -3,12 +3,11 @@
 require 'zip'
 
 class ExportLogService
-  def initialize
-    @source_path = Rails.root.join('log', "#{Rails.env}.log")
-    @shared_path = Rails.root.join('log', "#{Rails.env}_shared.zip")
-  end
+  SOURCE_PATH = Rails.root.join('log', "#{Rails.env}.log")
+  SHARED_PATH = Rails.root.join('log', "#{Rails.env}_shared.zip")
 
   def export
+    delete_zip_file
     create_zip
     clear_source_file
     export_file
@@ -18,19 +17,19 @@ class ExportLogService
   private
 
   def create_zip
-    Zip::File.open(@shared_path, create: true) { |zipfile| zipfile.add('file', File.open(@source_path)) }
+    Zip::File.open(SHARED_PATH, create: true) { |zipfile| zipfile.add('file', File.open(SOURCE_PATH)) }
   end
 
   def clear_source_file
-    File.write(@source_path, '')
+    File.write(SOURCE_PATH, '')
   end
 
   def export_file
-    Log.create.file.attach(io: File.open(@shared_path),
+    Log.create.file.attach(io: File.open(SHARED_PATH),
                            filename: "Log-#{DateTime.now}.zip")
   end
 
   def delete_zip_file
-    File.delete(@shared_path)
+    FileUtils.rm_f(SHARED_PATH)
   end
 end
