@@ -11,6 +11,8 @@ class GatePolicy < ApplicationPolicy
   end
 
   def index?
+    check_type
+    
     true
   end
 end

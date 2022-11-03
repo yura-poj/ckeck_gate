@@ -38,6 +38,10 @@ class ApplicationPolicy
     false
   end
 
+  def check_type
+    raise Pundit::NotAuthorizedError, 'must be with type' if user.class.to_s == 'User'
+  end
+
   class Scope
     def initialize(user, scope)
       @user = user
