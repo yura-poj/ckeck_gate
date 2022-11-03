@@ -35,6 +35,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit_type; end
+
+  def update
+    if user.update(user_params)
+      flash[:success] = 'Successfuly updated'
+      redirect_to root_path
+    else
+      flash[:alert] = 'User does not updated'
+    end
+  end
+
   private
 
   def users
@@ -45,5 +56,9 @@ class UsersController < ApplicationController
     return User.find(params[:id]) if params[:id]
 
     current_user
+  end
+
+  def user_params
+    params.require(:user).permit(:type)
   end
 end

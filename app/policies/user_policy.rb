@@ -28,4 +28,8 @@ class UserPolicy < ApplicationPolicy
   def unverify?
     user.is_a?(Admin) && user != record
   end
+
+  def edit_type?
+    true
+  end
 end

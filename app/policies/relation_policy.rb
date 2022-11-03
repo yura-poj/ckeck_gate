@@ -11,10 +11,13 @@ class RelationPolicy < ApplicationPolicy
   end
 
   def index?
+    check_type
+
     true
   end
 
   def create?
+    check_type
     # record is a addressee
     return false if user.is_a?(Admin) || record.is_a?(Admin)
     return false if user.instance_of?(record.class)
@@ -23,6 +26,8 @@ class RelationPolicy < ApplicationPolicy
   end
 
   def destroy?
+    check_type
+
     return true if user.is_a?(Admin)
     return true if user == record.sender
 
@@ -30,6 +35,8 @@ class RelationPolicy < ApplicationPolicy
   end
 
   def accept?
+    check_type
+
     return false if user.is_a?(Admin)
     return false if user == record.sender
     return false if record.addressee != user
@@ -38,6 +45,8 @@ class RelationPolicy < ApplicationPolicy
   end
 
   def decline?
+    check_type
+
     return false if user.is_a?(Admin)
     return false if user == record.sender
     return false if record.addressee != user

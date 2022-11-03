@@ -16,10 +16,11 @@ Rails.application.routes.draw do
                 sessions: 'users/sessions',
                 omniauth_callbacks: 'users/omniauth_callbacks'
               }
-  resources :users, only: %i[show index] do
+  resources :users, only: %i[show index update] do
     member do
       patch 'verify'
       patch 'unverify'
+      get 'edit_type'
     end
 
   end
