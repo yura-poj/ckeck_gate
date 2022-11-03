@@ -39,10 +39,10 @@ class UsersController < ApplicationController
 
   def update
     if user.update(user_params)
-      flash[:success] = "Successfuly updated"
+      flash[:success] = 'Successfuly updated'
       redirect_to root_path
     else
-      flash[:alert] = "User does not updated"
+      flash[:alert] = 'User does not updated'
     end
   end
 

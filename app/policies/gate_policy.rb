@@ -12,7 +12,7 @@ class GatePolicy < ApplicationPolicy
 
   def index?
     check_type
-    
+
     true
   end
 end
