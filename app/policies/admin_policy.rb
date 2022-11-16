@@ -11,4 +11,12 @@ class AdminPolicy < ApplicationPolicy
   def show?
     user.is_a?(Admin) || user == record
   end
+
+  def verify?
+    user.is_a?(Admin)
+  end
+
+  def unverify?
+    user.is_a?(Admin)
+  end
 end

@@ -11,4 +11,12 @@ class KidPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def verify?
+    user.is_a?(Admin)
+  end
+
+  def unverify?
+    user.is_a?(Admin)
+  end
 end
