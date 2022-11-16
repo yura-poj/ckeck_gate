@@ -38,6 +38,10 @@ Rails.application.routes.draw do
       resources :exits, only: %i[create]
       resources :enters, only: %i[create]
     end
+    namespace :v2 do
+      resources :exits, only: %i[create]
+      resources :enters, only: %i[create]
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
