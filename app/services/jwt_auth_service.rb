@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class JwtAuthService
   HMAC_SECRET = Rails.application.credentials[Rails.env.to_sym][:jwt][:secret]
 
@@ -7,11 +9,10 @@ class JwtAuthService
 
   def encode
     payload = { data: 'work' }
-    token = JWT.encode payload, HMAC_SECRET, 'HS256'
+    JWT.encode payload, HMAC_SECRET, 'HS256'
   end
 
   def decode
-    decoded_token = JWT.decode @token, HMAC_SECRET, true, { algorithm: 'HS256' }
+    JWT.decode @token, HMAC_SECRET, true, { algorithm: 'HS256' }
   end
 end
-
